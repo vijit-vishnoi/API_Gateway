@@ -12,6 +12,10 @@ const limiter=rateLimit({
     max:5
 })
 
+
+app.get('/', (req, res) => {
+    res.status(200).send('Healthy');
+  });
 app.use(morgan('combined'));
 app.use(limiter);
 
